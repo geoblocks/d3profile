@@ -72,7 +72,8 @@ const d3 = {
  * @param {ProfileOptions} options Profile options.
  * @export
  */
-const exports = function(options) {
+export default function(options) {
+
   /**
    * Whether the simplified profile should be shown.
    * @type {boolean}
@@ -641,7 +642,4 @@ const exports = function(options) {
 
 
   return profile;
-};
-
-
-export default exports;
+}
