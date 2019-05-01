@@ -1,7 +1,5 @@
 // @ts-nocheck
-/**
- * @module ngeo.profile.d3Elevation
- */
+
 import 'd3-transition';
 import {bisector, extent} from 'd3-array';
 import {axisBottom, axisLeft} from 'd3-axis';
@@ -71,7 +69,7 @@ const d3 = {
  *     ]
  *
  * @return {Object} D3js component.
- * @param {ngeox.profile.ProfileOptions} options Profile options.
+ * @param {ProfileOptions} options Profile options.
  * @export
  */
 const exports = function(options) {
@@ -90,14 +88,14 @@ const exports = function(options) {
 
   /**
    * Hover callback function.
-   * @type {function(Object, number, string, Object.<string, number>, string)}
+   * @type {function(Object, number, string, Object.<string, number>, string):void}
    */
   const hoverCallback = options.hoverCallback !== undefined ?
     options.hoverCallback : () => {};
 
   /**
    * Out callback function.
-   * @type {function()}
+   * @type {function():void}
    */
   const outCallback = options.outCallback !== undefined ?
     options.outCallback : () => {};
@@ -154,7 +152,7 @@ const exports = function(options) {
   const yAxisLabel = (i18n.yAxis || 'Elevation');
 
   /**
-   * @type {ngeox.profile.ProfileFormatter}
+   * @type {ProfileFormatter}
    */
   const formatter = {
     /**
@@ -629,7 +627,7 @@ const exports = function(options) {
     poiEnterG.selectAll('line')
       .style('stroke', 'grey')
       .attr('x1', d => x(pe.dist(d)))
-      .attr('y1', d => y(y.domain()[0]))
+      .attr('y1', _ => y(y.domain()[0]))
       .attr('x2', d => x(pe.dist(d)))
       .attr('y2', d => y(pe.z(d)));
 
