@@ -1,6 +1,6 @@
 {
   "name": "@geoblocks/d3profile",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Geoblocks d3profile",
   "main": "dist/d3Elevation.js",
   "module": "dist/d3Elevation.js",
