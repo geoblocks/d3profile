@@ -494,7 +494,7 @@ export default function(options) {
   };
 
   /**
-   * @param {string} target
+   * @param {string|HTMLElement} target
    * @param {Array} datum
    */
   profile.refreshProfile = function(target, datum) {
