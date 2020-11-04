@@ -2,12 +2,10 @@
   "name": "@geoblocks/d3profile",
   "version": "0.0.5",
   "description": "Geoblocks d3profile",
-  "main": "dist/d3Elevation.js",
-  "module": "dist/d3Elevation.js",
-  "source": "src/d3Elevation.js",
+  "main": "src/d3Elevation.js",
+  "module": "src/d3Elevation.js",
   "scripts": {
     "eslint": "eslint src",
-    "build": "microbundle",
     "typecheck": "tsc --pretty",
     "lint": "npm run eslint && npm run typecheck",
     "test": "npm run lint && npm run build"
@@ -18,7 +16,6 @@
     "@types/d3": "^5.7.2",
     "eslint": "^6.5.1",
     "eslint-config-openlayers": "^12.0.0",
-    "microbundle": "^0.11.0",
     "typescript": "^3.6.4"
   },
   "dependencies": {
