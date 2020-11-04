@@ -1,3 +1,4 @@
+.editorconfig
 .eslintrc.yml
 .travis.yml
 tsconfig.json
