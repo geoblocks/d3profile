@@ -117,9 +117,9 @@ export default function(options) {
   const numberOfLines = Object.keys(linesConfiguration).length;
 
   /**
-   * Method to get the coordinate in pixels from a distance.
+   * Method to get the index of the closest distance.
    */
-  const bisectDistance = d3.bisector(d => distanceExtractor(d)).left;
+  const closestDistance = d3.bisector.center(d => distanceExtractor(d)).left;
 
   /**
    * POI data extractor.
@@ -511,7 +511,7 @@ export default function(options) {
       return;
     }
     const data = svg.datum();
-    const i = bisectDistance(data, distance);
+    const i = closestDistance(data, distance);
     if (i >= data.length) {
       return;
     }
@@ -577,7 +577,7 @@ export default function(options) {
     const ps = g.select('.pois');
 
     const p = ps.selectAll('.poi').data(pois, (d) => {
-      const i = bisectDistance(profileData, Math.round(pe.dist(d) * 10) / 10, 1);
+      const i = closestDistance(profileData, Math.round(pe.dist(d) * 10) / 10, 1);
       const point = profileData[i];
       if (point) {
         let lineName;
