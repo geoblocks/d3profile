@@ -119,7 +119,18 @@ export default function(options) {
   /**
    * Method to get the index of the closest distance.
    */
-  const closestDistance = d3.bisector.center(d => distanceExtractor(d)).left;
+  const closestDistance = (array, d) => {
+    let prevDist = Number.POSITIVE_INFINITY;
+    for (let i = 0; i < array.length; ++i) {
+      const diff = Math.abs(d - distanceExtractor(array[i]));
+      if (diff > prevDist) {
+        return i - 1;
+      }
+      prevDist = diff;
+    }
+    return array.length - 1;
+  };
+
 
   /**
    * POI data extractor.
